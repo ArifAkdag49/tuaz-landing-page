@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tuaz Menü</title>
+</head>
+<body style="text-align:center; margin-top:50px;">
+  <h1>Tuaz Menü'ye Hoş Geldiniz!</h1>
+  <p>Instagram sayfamızı ziyaret edin ve abone olmak ister misiniz?</p>
+  <button onclick="window.open('https://www.instagram.com/tuazborek_ginsheim/?next=%2F', '_blank')">Instagram'a Git</button><br><br>
+  <button onclick="window.open('PDF_LINK_HERE', '_blank')">Devam Et (Menüyü Görüntüle)</button>
+</body>
+</html>
