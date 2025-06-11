@@ -7,8 +7,7 @@
   body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* GitHub raw linki arka plan resmi olarak */
-    background: url('https://raw.githubusercontent.com/ArifAkdag49/tuaz-landing-page/main/+DSC01032.jpg') no-repeat center center fixed;
+    background: url('images/kahvalti.jpg') no-repeat center center fixed;
     background-size: cover;
     position: relative;
     height: 100vh;
@@ -58,6 +57,10 @@
     margin-bottom: 40px;
     text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
   }
+  .button-group {
+    display: flex;
+    gap: 20px;
+  }
   button {
     background-color: #E1306C;
     border: none;
@@ -76,6 +79,12 @@
   button:hover {
     background-color: #c1275b;
   }
+  .continue-btn {
+    background-color: #4CAF50;
+  }
+  .continue-btn:hover {
+    background-color: #3e8e41;
+  }
   button img {
     width: 30px;
     height: 30px;
@@ -85,16 +94,15 @@
   function goInstagram() {
     localStorage.setItem('cameFromInstagram', 'true');
     window.open('https://www.instagram.com/tuazborek_ginsheim/?next=%2F', '_blank');
-    alert('Lütfen Instagram sayfasında 7-8 saniye kalın, sonra buraya geri dönün, menü açılacak.');
+    alert('Lütfen Instagram sayfasında 7-8 saniye kalın, sonra buraya geri dönün, menü açılacak. \nBitte bleiben Sie 7-8 Sekunden auf der Instagram-Seite und kehren Sie dann zurück, um das Menü zu öffnen.');
   }
   function skipToMenu() {
-    // PDF için doğru Google Drive direct download linki
-    window.open('https://drive.google.com/uc?export=download&id=1RvOVOcEelzwjYkfguh0u4jXj5KDCEzjC', '_blank');
+    window.open('https://drive.google.com/uc?export=download&id=PDF_FILE_ID', '_blank');
   }
   window.onload = function() {
     if (localStorage.getItem('cameFromInstagram') === 'true') {
       localStorage.removeItem('cameFromInstagram');
-      window.open('https://drive.google.com/uc?export=download&id=1RvOVOcEelzwjYkfguh0u4jXj5KDCEzjC', '_blank');
+      window.open('https://drive.google.com/uc?export=download&id=PDF_FILE_ID', '_blank');
     }
   };
 </script>
@@ -102,15 +110,17 @@
 <body>
   <div class="container">
     <div class="logo-wrapper">
-      <img src="https://raw.githubusercontent.com/ArifAkdag49/tuaz-landing-page/main/tuaz%20logo.jpg" alt="Tuaz Börek Logo" />
+      <img src="images/tuaz_logo.jpg" alt="Tuaz Börek Logo" />
     </div>
-    <h1>Tuaz Börek Menü</h1>
-    <p>Instagram sayfanızı takip edip abone olmak ister misiniz?</p>
-    <button onclick="goInstagram()">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/28px-Instagram_logo_2016.svg.png" alt="Instagram" />
-      Instagram'a Git
-    </button>
-    <button style="margin-left: 15px;" onclick="skipToMenu()">Geç (Menüyü Hemen Aç)</button>
+    <h1>Tuaz Börek Menü<br>Tuaz Börek Speisekarte</h1>
+    <p>Instagram sayfanızı takip edip abone olmak ister misiniz?<br>Möchten Sie unsere Instagram-Seite abonnieren?</p>
+    <div class="button-group">
+      <button onclick="goInstagram()">
+        <img src="images/instagram_icon.svg" alt="Instagram" />
+        Instagram'a Git / Zur Instagram-Seite
+      </button>
+      <button class="continue-btn" onclick="skipToMenu()">Geç (Menüyü Aç) / Überspringen (Menü öffnen)</button>
+    </div>
   </div>
 </body>
 </html>
