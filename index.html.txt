@@ -3,11 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <title>Tuaz Menü</title>
+  <script>
+    // Sayfa yüklendiğinde kontrol et
+    window.onload = function() {
+      // Eğer localStorage'da "cameFromInstagram" varsa, PDF'yi aç
+      if (localStorage.getItem('cameFromInstagram') === 'true') {
+        localStorage.removeItem('cameFromInstagram'); // Temizle
+        // PDF sayfasını aç (yeni sekmede veya aynı sekmede)
+        window.open('https://drive.google.com/uc?export=download&id=PDF_FILE_ID', '_blank');
+      }
+    };
+
+    function goInstagram() {
+      // localStorage'a işaret koy: instagramdan dönecek
+      localStorage.setItem('cameFromInstagram', 'true');
+      // Instagram sayfasını yeni sekmede aç
+      window.open('https://www.instagram.com/tuazborek_ginsheim/?next=%2F', '_blank');
+      alert('Lütfen Instagram sayfasında en az 7-8 saniye kalın, sonra buraya geri dönün, menü açılacak.');
+    }
+
+    function skipToMenu() {
+      // Hemen PDF sayfasını aç
+      window.open('https://drive.google.com/uc?export=download&id=PDF_FILE_ID', '_blank');
+    }
+  </script>
 </head>
 <body style="text-align:center; margin-top:50px;">
   <h1>Tuaz Menü'ye Hoş Geldiniz!</h1>
   <p>Instagram sayfamızı ziyaret edin ve abone olmak ister misiniz?</p>
-  <button onclick="window.open('https://www.instagram.com/tuazborek_ginsheim/?next=%2F', '_blank')">Instagram'a Git</button><br><br>
-  <button onclick="window.open('PDF_LINK_HERE', '_blank')">Devam Et (Menüyü Görüntüle)</button>
+  <button onclick="goInstagram()">Instagram'a Git</button><br><br>
+  <button onclick="skipToMenu()">Geç (Menüyü Hemen Aç)</button>
 </body>
 </html>
