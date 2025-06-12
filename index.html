@@ -7,7 +7,7 @@
   body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: url('images/kahvalti.jpg') no-repeat center center fixed;
+    background: url('https://raw.githubusercontent.com/ArifAkdag49/tuaz-landing-page/main/+DSC01032.jpg') no-repeat center center fixed;
     background-size: cover;
     position: relative;
     height: 100vh;
@@ -57,13 +57,10 @@
     margin-bottom: 40px;
     text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
   }
-
-  /* Butonlar için yan yana stil */
   .button-group {
     display: flex;
     gap: 20px;
   }
-  
   button {
     display: flex;
     align-items: center;
@@ -102,12 +99,12 @@
     alert('Lütfen Instagram sayfasında 7-8 saniye kalın, sonra buraya geri dönün, menü açılacak.');
   }
   function skipToMenu() {
-    window.open('https://drive.google.com/uc?export=download&id=PDF_FILE_ID', '_blank');
+    window.open('https://drive.google.com/uc?export=download&id=1NmgKw5BDX_EHwoLWymqOgrZkR1CmR6LV', '_blank');
   }
   window.onload = function() {
     if (localStorage.getItem('cameFromInstagram') === 'true') {
       localStorage.removeItem('cameFromInstagram');
-      window.open('https://drive.google.com/uc?export=download&id=PDF_FILE_ID', '_blank');
+      window.open('https://drive.google.com/uc?export=download&id=1NmgKw5BDX_EHwoLWymqOgrZkR1CmR6LV', '_blank');
     }
   };
 </script>
@@ -115,13 +112,13 @@
 <body>
   <div class="container">
     <div class="logo-wrapper">
-      <img src="images/tuaz_logo.jpg" alt="Tuaz Börek Logo" />
+      <img src="https://raw.githubusercontent.com/ArifAkdag49/tuaz-landing-page/main/tuaz%20logo.jpg" alt="Tuaz Börek Logo" />
     </div>
     <h1>Tuaz Börek Menü / Tuaz Börek Speisekarte</h1>
     <p>Instagram sayfanızı takip edip abone olmak ister misiniz? / Möchten Sie unserer Instagram-Seite folgen und abonnieren?</p>
     <div class="button-group">
       <button onclick="goInstagram()">
-        <img src="images/instagram_logo.png" alt="Instagram" />
+        <img src="https://raw.githubusercontent.com/ArifAkdag49/tuaz-landing-page/main/instagram_logo.png" alt="Instagram" />
         Instagram'a Git / Zur Instagram-Seite
       </button>
       <button class="continue" onclick="skipToMenu()">Geç (menüyü aç) / Überspringen (Menü öffnen)</button>
