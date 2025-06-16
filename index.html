@@ -1,3 +1,7 @@
+# Yeni HTML'yi kare butonlar ve okunaklılıkla yeniden yazalım
+new_html_path = "/mnt/data/index_for_github_pages.html"
+
+html_code = """
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -17,10 +21,11 @@
       color: white;
     }
     .container {
-      background-color: rgba(0,0,0,0.5);
+      background-color: rgba(0,0,0,0.6);
       padding: 40px;
       border-radius: 20px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      box-shadow: 0 0 30px rgba(0,0,0,0.6);
+      max-width: 700px;
     }
     .logo img {
       width: 150px;
@@ -29,30 +34,33 @@
       margin-bottom: 20px;
     }
     h1 {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       margin-bottom: 10px;
     }
     p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       margin-bottom: 30px;
     }
     .button-group {
       display: flex;
+      flex-direction: column;
       gap: 20px;
       justify-content: center;
-      flex-wrap: wrap;
+      align-items: center;
     }
     button {
-      padding: 15px 30px;
+      padding: 15px 20px;
       font-size: 1rem;
       font-weight: bold;
       border: none;
-      border-radius: 40px;
+      border-radius: 12px;
+      width: 280px;
       cursor: pointer;
       transition: background 0.3s ease;
       display: flex;
       align-items: center;
-      gap: 10px;
+      justify-content: center;
+      gap: 12px;
     }
     .instagram-btn {
       background-color: #E1306C;
@@ -69,8 +77,8 @@
       background-color: #3e8e41;
     }
     button img {
-      width: 20px;
-      height: 20px;
+      width: 24px;
+      height: 24px;
     }
     iframe {
       position: fixed;
@@ -80,6 +88,7 @@
       height: 100vh;
       border: none;
       z-index: 9999;
+      background: white;
     }
   </style>
 </head>
@@ -128,3 +137,9 @@
   </script>
 </body>
 </html>
+"""
+
+with open(new_html_path, "w", encoding="utf-8") as f:
+    f.write(html_code)
+
+new_html_path
