@@ -1,133 +1,85 @@
-
-from pathlib import Path
-
-# Define the GitHub raw URL for the PDF file
-pdf_url = "https://raw.githubusercontent.com/ArifAkdag49/tuaz-landing-page/main/tuaz_menu%20(1)_compressed.pdf"
-
-# Define the HTML content with interactive buttons and embedded iframe for the menu
-html_code = f"""<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
   <title>Tuaz Börek Menü</title>
   <style>
-    body {{
+    body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: url('https://raw.githubusercontent.com/ArifAkdag49/tuaz-landing-page/main/+DSC01032.jpg') no-repeat center center fixed;
-      background-size: cover;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background-color: #f0f0f0;
       text-align: center;
-      color: white;
-    }}
-    .container {{
-      background-color: rgba(0, 0, 0, 0.6);
+    }
+    .container {
       padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-    }}
-    .logo img {{
-      width: 140px;
-      border-radius: 50%;
-      border: 3px solid white;
+    }
+    h1 {
       margin-bottom: 20px;
-    }}
-    h1 {{
-      font-size: 2.2rem;
-      margin-bottom: 10px;
-    }}
-    p {{
-      font-size: 1.1rem;
-      margin-bottom: 25px;
-    }}
-    .button-group {{
-      display: flex;
-      gap: 15px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }}
-    button {{
-      padding: 12px 25px;
+    }
+    .button-group {
+      margin-bottom: 30px;
+    }
+    button {
+      padding: 15px 25px;
       font-size: 1rem;
       font-weight: bold;
+      margin: 10px;
       border: none;
       border-radius: 10px;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }}
-    .instagram-btn {{
+    }
+    .instagram-btn {
       background-color: #E1306C;
       color: white;
-    }}
-    .menu-btn {{
+    }
+    .menu-btn {
       background-color: #4CAF50;
       color: white;
-    }}
-    iframe {{
-      position: fixed;
-      top: 0;
-      left: 0;
+    }
+    iframe {
       width: 100vw;
       height: 100vh;
       border: none;
-      z-index: 9999;
-    }}
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 99;
+    }
   </style>
 </head>
 <body>
   <div class="container" id="mainContent">
-    <div class="logo">
-      <img src="https://raw.githubusercontent.com/ArifAkdag49/tuaz-landing-page/main/tuaz%20logo.jpg" alt="Tuaz Börek Logo">
-    </div>
     <h1>Tuaz Börek Menü / Speisekarte</h1>
-    <p>Instagram sayfamızı ziyaret edip abone olmak ister misiniz?<br/>Möchten Sie unsere Instagram-Seite abonnieren?</p>
     <div class="button-group">
-      <button class="instagram-btn" onclick="goInstagram()">
-        <img src="https://raw.githubusercontent.com/ArifAkdag49/tuaz-landing-page/main/instagram_logo.png" alt="Instagram Icon" width="20" height="20">
-        Instagram'a Git
-      </button>
-      <button class="menu-btn" onclick="showMenu()">
-        Geç (Menüyü Aç)
-      </button>
+      <button class="instagram-btn" onclick="goInstagram()">Instagram'a Git</button>
+      <button class="menu-btn" onclick="showMenu()">Geç (Menüyü Aç)</button>
     </div>
   </div>
 
   <script>
-    const menuURL = "{pdf_url}";
+    const menuURL = "https://raw.githubusercontent.com/ArifAkdag49/tuaz-landing-page/main/tuaz_menu%20(1)_compressed.pdf";
 
-    function goInstagram() {{
-      window.open('https://www.instagram.com/tuazborek_ginsheim/', '_blank');
+    function goInstagram() {
+      window.open("https://www.instagram.com/tuazborek_ginsheim/", "_blank");
       localStorage.setItem('fromInstagram', 'yes');
-      setTimeout(() => {{
+      setTimeout(() => {
         showMenu();
-      }}, 6000);
-    }}
+      }, 6000);
+    }
 
-    function showMenu() {{
+    function showMenu() {
       document.getElementById("mainContent").style.display = "none";
-      const iframe = document.createElement('iframe');
+      const iframe = document.createElement("iframe");
       iframe.src = menuURL;
       document.body.appendChild(iframe);
-    }}
+    }
 
-    window.onload = function () {{
-      if (localStorage.getItem('fromInstagram') === 'yes') {{
-        localStorage.removeItem('fromInstagram');
+    window.onload = function () {
+      if (localStorage.getItem("fromInstagram") === "yes") {
+        localStorage.removeItem("fromInstagram");
         showMenu();
-      }}
-    }};
+      }
+    };
   </script>
 </body>
 </html>
-"""
-
-# Save to an HTML file
-html_path = Path("/mnt/data/index_with_iframe_buttons.html")
-html_path.write_text(html_code)
-
-html_path.name
