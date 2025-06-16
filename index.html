@@ -93,20 +93,27 @@
   </div>
 
   <script>
-    function goInstagram() {
-      // Instagram sekmesini yeni aç
-      window.open('https://www.instagram.com/tuazborek_ginsheim/?next=%2F', '_blank');
+    const menuURL = 'https://drive.google.com/uc?export=download&id=1RvOVOcEelzwjYkfguh0u4jXj5KDCEzjC';
 
-      // 6 saniye sonra menüyü aç
+    function goInstagram() {
+      window.open('https://www.instagram.com/tuazborek_ginsheim/?next=%2F', '_blank');
+      localStorage.setItem('fromInstagram', 'yes');
       setTimeout(() => {
-        window.location.href = 'https://drive.google.com/uc?export=download&id=1NmgKw5BDX_EHwoLWymqOgrZkR1CmR6LV';
+        window.location.href = menuURL;
       }, 6000);
     }
 
     function skipToMenu() {
-      // Direkt menüyü aç
-      window.location.href = 'https://drive.google.com/uc?export=download&id=1NmgKw5BDX_EHwoLWymqOgrZkR1CmR6LV';
+      window.location.href = menuURL;
     }
+
+    window.onload = function () {
+      if (localStorage.getItem('fromInstagram') === 'yes') {
+        localStorage.removeItem('fromInstagram');
+        window.location.href = menuURL;
+      }
+    };
   </script>
 </body>
 </html>
+
