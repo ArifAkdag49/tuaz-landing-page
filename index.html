@@ -42,7 +42,7 @@
       font-size: 1rem;
       font-weight: bold;
       border: none;
-      border-radius: 20px;
+      border-radius: 40px;
       cursor: pointer;
     }
     .instagram-btn {
@@ -59,7 +59,7 @@
     }
     .menu-images img {
       width: 100%;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
   </style>
 </head>
@@ -75,29 +75,31 @@
       <button class="menu-btn" onclick="showMenu()">Geç (Menüyü Aç)</button>
     </div>
   </div>
-
   <div id="menuImages" class="menu-images" style="display:none;">
-    <!-- Buraya PNG menü sayfaları gelecek -->
-    <img src="assets/page1.png" alt="Menu Page 1">
-    <img src="assets/page2.png" alt="Menu Page 2">
-    <img src="assets/page3.png" alt="Menu Page 3">
-    <img src="assets/page4.png" alt="Menu Page 4">
-    <img src="assets/page5.png" alt="Menu Page 5">
-    <!-- Eğer başka PNG varsa buraya ekle -->
+    <img src="assets/menu_1.png" alt="Menu Page 1">
+    <img src="assets/menu_2.png" alt="Menu Page 2">
+    <img src="assets/menu_3.png" alt="Menu Page 3">
+    <img src="assets/menu_4.png" alt="Menu Page 4">
+    <img src="assets/menu_5.png" alt="Menu Page 5">
+    <img src="assets/menu_6.png" alt="Menu Page 6">
+    <img src="assets/menu_7.png" alt="Menu Page 7">
+    <img src="assets/menu_8.png" alt="Menu Page 8">
+    <img src="assets/menu_9.png" alt="Menu Page 9">
+    <img src="assets/menu_10.png" alt="Menu Page 10">
+    <img src="assets/menu_11.png" alt="Menu Page 11">
+    <img src="assets/menu_12.png" alt="Menu Page 12">
+    <img src="assets/menu_13.png" alt="Menu Page 13">
   </div>
-
   <script>
     function goInstagram() {
       window.open('https://www.instagram.com/tuazborek_ginsheim/', '_blank');
       localStorage.setItem('fromInstagram', 'yes');
       setTimeout(showMenu, 6000);
     }
-
     function showMenu() {
       document.getElementById('mainContent').style.display = 'none';
       document.getElementById('menuImages').style.display = 'block';
     }
-
     window.onload = function () {
       if (localStorage.getItem('fromInstagram') === 'yes') {
         localStorage.removeItem('fromInstagram');
@@ -107,3 +109,4 @@
   </script>
 </body>
 </html>
+
